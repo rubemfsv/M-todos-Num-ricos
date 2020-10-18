@@ -25,8 +25,8 @@ def Bisect(Re):
         if (xr != 0):  # Condição para verificar se xr é diferente de 0
             ea = abs((xr - xrold) / xr)  # Calculo do erro
         print(
-            f'{i}    {round(xl, 10)}      {xu}      {round(xr, 10)}      {round(ea, 10)}            {round(fr, 10)}'
-        )  # Exibe os valores da iteração
+            f'{i}    {round(xl, 10)}      {xu}      {round(xr, 10)}      {round(abs(ea), 10)}            {round(fr, 10)}'
+        )  # Exibe os valores da iteração arredondando para até 10 digitos
         test = fl * fr  # Guarda o resultado da multiplicação de fl por fr
         if (
                 test < 0
