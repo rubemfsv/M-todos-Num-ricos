@@ -20,7 +20,7 @@ while (1): # No loop de repetição aplica o algoritmo de Newton-Raphson
     i = i + 1 # Aumenta a iteração
     x1 = x0 - Equation(x0) / DerivativeEquation(x0)
     ea = (x1 - x0) / x1 # Calculo do erro
-    print(f'{i}     {x1}      {ea}')
+    print(f'{i}     {x1}      {abs(ea)}')
     x0 = x1
-    if (abs(ea) < 0.002): # Condição de parada das iterações
+    if (abs(ea) < 0.02): # Condição de parada das iterações
         break
