@@ -14,7 +14,9 @@ def Bisect(Re):
     xr = 0
     fl = Equation(xl, Re)  # Chama a equação a cima
     i = 0  # Numero de iterações
-    print("  i     xl         xu         xr         ea         f(xr)\n")
+    print(
+        "i     xl         xu         xr            ea                        f(xr)\n"
+    )
     while (1):
         i = i + 1  # Aumenta a iteração
         xrold = xr  # Guarda o valor antigo de xr para utilizar posteriormente
@@ -22,7 +24,9 @@ def Bisect(Re):
         fr = Equation(xr, Re)  # Chama a equação a cima para os valores dados
         if (xr != 0):  # Condição para verificar se xr é diferente de 0
             ea = abs((xr - xrold) / xr)  # Calculo do erro
-        print(i, xl, xu, xr, ea, fr)  # Exibe os valores da iteração
+        print(
+            f'{i}    {round(xl, 10)}      {xu}      {round(xr, 10)}      {round(ea, 10)}            {round(fr, 10)}'
+        )  # Exibe os valores da iteração
         test = fl * fr  # Guarda o resultado da multiplicação de fl por fr
         if (
                 test < 0
