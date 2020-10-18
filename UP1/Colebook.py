@@ -7,7 +7,7 @@ def Equation(x, Re):
     return y
 
 
-# Aplicação da
+# Aplicação da bisecção para descobrir o resultado
 def Bisect(Re):
     xl = 0.001  # Limite inferior do fator de atrito de Fanning, substituindo xl por 0.00001 e xu por 1, consegue que a função resolva problemas com uma gama mais ampla de Re
     xu = 0.01  # Limite superior do fator de atrito de Fanning
