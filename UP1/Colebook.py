@@ -3,7 +3,7 @@ import math
 
 # Equação dada na questão
 def Equation(x, Re):
-    y = (1 / math.sqrt(x)) - (4 * math.log10(Re * x)) + 0.4
+    y = (1 / math.sqrt(x)) - (4 * math.log10(Re * math.sqrt(x))) + 0.4
     return y
 
 
@@ -11,7 +11,7 @@ def Equation(x, Re):
 def Bisect(Re):
     xl = 0.001  # Limite inferior do fator de atrito de Fanning, substituindo xl por 0.00001 e xu por 1, consegue que a função resolva problemas com uma gama mais ampla de Re
     xu = 0.01  # Limite superior do fator de atrito de Fanning
-    xr = 0
+    xr = 0  # Setando xr que será chamado durante as iterações
     fl = Equation(xl, Re)  # Chama a equação a cima
     i = 0  # Numero de iterações
     print(
@@ -20,7 +20,7 @@ def Bisect(Re):
     while (1):
         i = i + 1  # Aumenta a iteração
         xrold = xr  # Guarda o valor antigo de xr para utilizar posteriormente
-        xr = (xl + xu) / 2  # Valor novo de xr
+        xr = (xl + xu) / 2  # Valor inicial de xr que vai aplicar na função
         fr = Equation(xr, Re)  # Chama a equação a cima para os valores dados
         if (xr != 0):  # Condição para verificar se xr é diferente de 0
             ea = abs((xr - xrold) / xr)  # Calculo do erro
@@ -43,5 +43,5 @@ def Bisect(Re):
             break
 
 
-# Substituir o valor entre parenteses para testar outros valores, estou testando a função para 30000
-Bisect(30000)
+# Substituir o valor entre parenteses para testar outros valores, estou testando a função para 20000
+Bisect(20000)
